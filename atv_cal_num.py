@@ -29,7 +29,7 @@ def bisecao(f, a, b, erro):
                     a = xn
             n += 1
             xn_menos_1 = xn 
-        print("A raiz é: ", xn)
+        print("A raiz aproximada é: ", xn)
         return adicionar_valores
     else:
         print("Não existe raiz no intervalo dado")
@@ -50,5 +50,6 @@ def criando_tabela(iteracao):
     nome_cols = [ 'n','a', 'b', 'xn', 'f(xn)', 'E']
     tabela = pd.DataFrame(iteracao, columns=nome_cols)
     print(tabela)
+
 if iteracao != None:
     criando_tabela(iteracao)
