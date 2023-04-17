@@ -1,6 +1,6 @@
 import pandas as pd
 
-def bisecao(f, a, b, erro):    
+def bissecao(f, a, b, erro):    
     tolerancia = 10**(-erro)
     xn = a
     xn_menos_1 = b
@@ -42,13 +42,14 @@ erro = float(input("Digite o n da tolerância assim E<10^-n : "))
 f = lambda x: eval(funcao_escrita)
 
 print("\n\n******** ******** ******* ******* ******* ******* ***** \n")
-iteracao = bisecao(f,a,b,erro)
+iteracao = bissecao(f,a,b,erro)
 print("\n******** ******** ******* ******* ******* ******* ***** \n\n\n")
 
 def criando_tabela(iteracao):
     print(" + + + + Tabela de iterações + + + + \n")
     nome_cols = [ 'n','a', 'b', 'xn', 'f(xn)', 'E']
     tabela = pd.DataFrame(iteracao, columns=nome_cols)
+    tabela_final = tabela.set_index('n')
     print(tabela)
 
 if iteracao != None:
